@@ -1,0 +1,14 @@
+---
+
+- name: Install WordPress, MariaDB, Nginx, and PHP-FPM
+  hosts: wordpress-server
+  become: yes
+  become_method: sudo
+  remote_user: centos
+
+  roles:
+    - common
+    - mariadb
+    - nginx
+    - php-fpm
+    - wordpress
